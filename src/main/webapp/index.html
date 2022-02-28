@@ -1,0 +1,157 @@
+<!DOCTYPE html
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 'lato';
+   list-style: none;
+   text-decoration: none;
+}
+
+body {
+   background: linear-gradient(#e66465, #9198e5);
+}
+
+.wrapper {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.mainMenu {
+   width: 250px;
+   display: block;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+.item {
+   border-top: 1px solid #6667AB;
+   overflow: hidden;
+}
+
+.btn {
+   display: block;
+   padding: 15px 20px;
+   background-color: #6667AB;
+   color: #fff;
+   position: relative;
+}
+
+.btn:before {
+   content: '';
+   position: absolute;
+   width: 0;
+   height: 0;
+   border-left: 8px solid transparent;
+   border-right: 8px solid transparent;
+   border-top: 10px solid #6667AB;
+   right: 15px;
+   bottom: -10px;
+   z-index: 9;
+}
+
+.btn i {
+   margin-right: 10px;
+}
+
+.subMenu {
+   background: #273057;
+   overflow: hidden;
+   transition: max-height 0.7s;
+   max-height: 0;
+}
+
+.subMenu a {
+   display: block;
+   padding: 15px 20px;
+   color: #fff;
+   font-size: 14px;
+   border-bottom: 1px solid #394c7f;
+   position: relative;
+}
+
+.subMenu a:before {
+   content: '';
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+
+.subMenu a:hover:before {
+   content: '';
+   position: absolute;
+   height: 0;
+   width: 6px;
+   left: 0;
+   top: 0;
+   opacity: 1;
+   border-top: 24px solid transparent;
+   border-left: 11px solid #fcdc29;
+   border-bottom: 24px solid transparent;
+}
+
+.subMenu a:after {
+   content: '';
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+
+.subMenu a:hover:after {
+   content: '';
+   position: absolute;
+   height: 0;
+   width: 6px;
+   right: 0px;
+   top: 0;
+   opacity: 1;
+   border-top: 24px solid transparent;
+   border-right: 11px solid #fcdc29;
+   border-bottom: 24px solid transparent;
+}
+
+.subMenu a:last-child {
+   border: none;
+}
+
+.item:target .subMenu {
+   max-height: 10em;
+}
+</style>
+<body>
+   <!-- <div class="inner">
+      <a href="insert.html"><button class="button button1">회원가입</button></a>
+      <a href="list.do"><button class="button button2">회원목록</button></a>
+   </div> -->
+   <div class="wrapper">
+      <ui class="mainMenu">
+      <li class="item" id="home"><a href="#home" class="btn"><i
+            class="fas fa-user-circle"></i>Home</a>
+         <div class="subMenu">
+            <a href="https://www.poscoict.com/servlet/Main?lang=kr">Posco
+               ICT</a> <a
+               href="https://www.posco.co.kr/homepage/docs/kor6/jsp/s91a0000001i.jsp">Posco</a>
+            <a href="http://gorecruit.posco.co.kr/">Posco Recruit</a>
+         </div></li>
+      <li class="item" id="account"><a href="#account" class="btn"><i
+            class="fas fa-address-card"></i>Account</a>
+         <div class="subMenu">
+            <a href="#login">로그인</a> <a href="insert.html">회원가입</a> <a
+               href="#forgotAccount">계정 찾기</a>
+         </div></li>
+      <li class="item" id="service"><a href="#service" class="btn"><i
+            class="fas fa-info"></i>Service</a>
+         <div class="subMenu">
+            <a href="list.do">회원목록보기</a>
+         </div></li>
+      <li class="item"><a href="#" class="btn"><i
+            class="fas fa-sign-out-alt"></i>Log Out</a></li>
+      </ui>
+   </div>
+</body>
+</html>
